@@ -79,6 +79,7 @@ $border-color: #03201c;
 .profile-container {
   background-color: $background-color;
   border-radius: 15px;
+  animation: show-profile 1s ease;
 }
 
 .profile-image {
@@ -106,5 +107,10 @@ $border-color: #03201c;
 
 .profile-content {
   padding: 20px;
-  font-family:   Times, serif;
+  font-family: Times, serif;
+}
+
+@keyframes show-profile {
+   from {margin-left: -400px;} 
+   to {margin-left: 0;} 
 }

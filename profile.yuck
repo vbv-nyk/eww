@@ -1,0 +1,30 @@
+(defwidget profile_root []
+  (box
+    :class "profile-container"
+    :space-evenly false
+    :orientation "vertical"
+    :valign "center"
+    (box
+      :height 200
+      :width 200
+      :class "profile-image"
+    )
+    (box
+      :class "profile-content"
+      :orientation "vertical"
+      :space-evenly false
+      (label
+        :class "profile-header"
+        :text "Hello!!"
+        :height 40
+        :xalign 0
+      )
+      (label
+        :class "profile-bio"
+        :wrap true
+        :text "I'm currently in my sixth semester pursuing a degree in Computer Science. My goal is to become a software developer someday. I'm also passionate about customizing my Linux environment to fit my needs. You're looking at Arch Linux with Sway."
+        :xalign 0
+      )
+    )
+  )
+)
