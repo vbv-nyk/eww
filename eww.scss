@@ -79,8 +79,11 @@ $border-color: #03201c;
 .profile-container {
   background-color: $background-color;
   border-radius: 15px;
-  animation: show-profile 1s ease;
+  animation-name: hide-profile, show-profile;
+  animation-duration: 1s, 1s;
+  animation-delay: 0s, 1s;
 }
+
 
 .profile-image {
   background-color: $border-color;
@@ -110,7 +113,23 @@ $border-color: #03201c;
   font-family: Times, serif;
 }
 
+.profile-contact {
+    font-size: 14px;
+    margin-top: 10px;
+    color: rgb(189, 183, 255);
+}
+.profile-contact-phone {
+    font-size: 18px;
+    margin-top: 10px;
+    color: rgb(53, 182, 178);
+}
+
+@keyframes hide-profile {
+   from {margin-top: 500px;} 
+   to {margin-top: 500px;} 
+}
+
 @keyframes show-profile {
-   from {margin-left: -400px;} 
-   to {margin-left: 0;} 
+   from {margin-top: 500px;} 
+   to {margin-top: 0;} 
 }

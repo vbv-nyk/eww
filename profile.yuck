@@ -15,15 +15,27 @@
       :space-evenly false
       (label
         :class "profile-header"
-        :text "Hello!!"
+        :text "Good Evening Folks,"
         :height 40
         :xalign 0
       )
       (label
         :class "profile-bio"
         :wrap true
-        :text "I'm currently in my sixth semester pursuing a degree in Computer Science. My goal is to become a software developer someday. I'm also passionate about customizing my Linux environment to fit my needs. You're looking at Arch Linux with Sway."
+        :text "I'm currently in my sixth semester pursuing a degree in Computer Science. My goal is to become a software developer. I love ricing my tiling window manager. I'm also huge one piece fan."
         :xalign 0
+      )
+      (label
+        :class "profile-contact"
+        :wrap true
+        :text "Contact me if you're looking for a developer."
+        :xalign 0
+      )
+      (label
+        :class "profile-contact"
+        :wrap true
+        :text "Email: vbv.nyk.2003@gmail.com"
+       :xalign 0
       )
     )
   )
