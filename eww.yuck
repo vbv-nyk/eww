@@ -1,0 +1,50 @@
+(defwindow example
+  :monitor 0
+  :stacking "bottom"
+  :geometry (geometry :x "10%"
+    :y "10%"
+  :anchor "top left")
+  :exclusive false
+  :windowtype "dock"
+  :wm-ignore false
+  (root))
+
+(defvar my-json "[{\"name\" : \"Vskaibhav\"},{\"name\" : \"Pratham\"},{\"name\" : \"Amogh\"},{\"name\" : \"Amogh\"}, {\"name\" : \"Amogh\"}, {\"name\" : \"Amogh\"} ]")
+
+(deflisten date :initial "today" `tail -F /tmp/some_file`)
+
+(defwidget dashboard []
+  (box :class "container"
+    (children)
+  )
+)
+
+(defwidget root []
+  (dashboard
+    (dashboard-left :text "Arch Linux")
+    (dashboard-middle :text date)
+    (dashboard-right :text "Vaibhav Nayak")
+  )
+)
+
+(defwidget dashboard-left [text]
+  (label :orientation "horizontal"
+    :class "dashboard-left"
+    :halign "fill"
+    :text text
+  )
+)
+
+(defwidget dashboard-middle [text]
+  (label :orientation "horizontal"
+    :class "dashboard-middle"
+    :text text
+  )
+)
+
+(defwidget dashboard-right [text]
+  (label :orientation "horizontal"
+    :class "dashboard-right"
+    :text text
+  )
+)
