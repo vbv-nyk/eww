@@ -1,7 +1,8 @@
 (include "overview.yuck")
+(include "profile.yuck")
 
 (defwindow overview
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (geometry :x "10%"
     :y "10%"
@@ -10,4 +11,13 @@
   :wm-ignore false
   (overview_root))
 
+(defwindow profile
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+   geometry :x "10%" :y "28%" :height "80%" :width "40%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (profile_root))
 

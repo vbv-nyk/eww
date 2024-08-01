@@ -1,4 +1,4 @@
-(deflisten date :initial "today" `tail -F /tmp/some_file`)
+(deflisten date `date "+%A %D"`)
 
 (defwidget overview_root []
   (box :class "container" :orientation "vertical"
@@ -25,7 +25,7 @@
 
 
 (defwidget overview-left [text]
-  (label 
+  (label
     :class "overview-left"
     :halign "fill"
     :text text
@@ -33,14 +33,14 @@
 )
 
 (defwidget overview-middle [text]
-  (label 
+  (label
     :class "overview-middle"
     :text text
   )
 )
 
 (defwidget overview-right [text]
-  (label 
+  (label
     :class "overview-right"
     :text text
   )
