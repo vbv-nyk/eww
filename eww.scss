@@ -1,8 +1,9 @@
 * { all: unset; }
 
-        $background-color: #022220; /* Replace with $border-color if using a preprocessor */
-        $border-color: #03201c; /* Replace with $background-color if using a preprocessor */
-.dashboard-left, .dashboard-middle, .dashboard-right {
+$background-color: #022220; 
+$border-color: #03201c; 
+
+.overview-left, .overview-middle, .overview-right {
     background-color: $background-color;
     font-weight: 800;
     letter-spacing: 2px;
@@ -10,50 +11,64 @@
     font-size: 14px;
     border-top: solid 10px $border-color;
     border-bottom: solid 10px $border-color;
-    animation-name: expand, glowup;
-    animation-duration: 0.3s, 0.8s;
-    animation-iteration-count: 1, 1;
+    animation-name:  showup, expand;
+    animation-duration:  0.6s, 0.3s;
+    animation-iteration-count:  1, 1;
+    animation-delay: 0s, 0.6s;
 }
 
-.dashboard-middle {
+.overview-middle {
     border-left: solid 5px $border-color;
     border-right: solid 5px $border-color;
 }
 
-.dashboard-left {
+.overview-left {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border-left: solid 10px $border-color;
 }
 
-.dashboard-middle {
+.overview-middle {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-.dashboard-right {
+.overview-right {
     padding: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-right: solid 10px $border-color;
 }
 
+.weather-container {
+    background-color: #022220;
+}
+
+@keyframes showup {
+    from {
+        margin-left: -300px;
+        padding: 0px 0px 0px 0px;
+    }
+    to {
+        margin-left: 0;
+        padding: 0px 0px 0px 0px;
+    }
+}
+
 @keyframes expand {
     from {
-        padding: 0px;
-        background-position: 100px 100px;
-        background-color: rgba(4, 58, 54, 0); /* Replace with $border-color if using a preprocessor */
-        border-color: rgba(3, 32, 28, 0); /* Replace with $background-color if using a preprocessor */
+        padding: 0px 0px 0px 0px;
     }
 
     to {
-        padding: 20px;
-        background-position: 0px 0px;
+        padding: 20px 20px 20px 20px;
     }
 }
-@keyframes glowup {
+@keyframes show-borders {
     from {
-        margin-top: -200px;
+        border-width: 0px;
     }
-
+    to {
+        border-width: 10px;
+    }
 }
 

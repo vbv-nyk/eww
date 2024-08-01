@@ -1,0 +1,47 @@
+(deflisten date :initial "today" `tail -F /tmp/some_file`)
+
+(defwidget overview_root []
+  (box :class "container" :orientation "vertical"
+    (overview_header
+      (overview-left :text "Arch Linux")
+      (overview-middle :text date)
+      (overview-right :text "Vaibhav Nayak")
+    )
+  )
+)
+
+(defwidget overview_header []
+  (box :class "overview-header"
+    (children)
+  )
+)
+
+(defwidget overview_body []
+  (box :class "overview-body"
+    (children)
+  )
+)
+
+
+
+(defwidget overview-left [text]
+  (label 
+    :class "overview-left"
+    :halign "fill"
+    :text text
+  )
+)
+
+(defwidget overview-middle [text]
+  (label 
+    :class "overview-middle"
+    :text text
+  )
+)
+
+(defwidget overview-right [text]
+  (label 
+    :class "overview-right"
+    :text text
+  )
+)
