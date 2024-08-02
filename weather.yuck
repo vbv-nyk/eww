@@ -55,8 +55,8 @@
   "heavy intensity drizzle rain": "heavy-drizzle-rain",
   "shower rain and drizzle": "shower-rain-drizzle",
   "heavy shower rain and drizzle": "heavy-shower-rain-drizzle",
-  "shower drizzle": "shower-drizzle"
-  }
+  "shower drizzle": "shower-drizzle"}
+  
 `)
 
 (defwidget weather_root []
@@ -65,31 +65,68 @@
     :space-evenly false
     :orientation "horizontal"
     :valign "center"
-    (scroll
-      :width 300
-      :height 200
-      :hscroll true
+    :hscroll true
+    (button
+      :onclick `eww update now=${(now + 1)%(arraylength(todays_forecast.list))}`
+      :onrightclick `eww update now=${now >= 0 ? ((now - 1))%(arraylength(todays_forecast.list)) : arraylength(todays_forecast.list) - 1}`
+      :onmiddleclick `eww update now=${0}`
       (box
-        (button
-          :onclick `eww update now=${(now + 1)%(arraylength(todays_forecast.list))}`
-          :onrightclick `eww update now=${now >= 0 ? ((now - 1))%(arraylength(todays_forecast.list)) : arraylength(todays_forecast.list) - 1}`
-          :onmiddleclick `eww update now=${0}`
+        :orientation "vertical"
+        :space-evenly false
+        (box
+          :orientation "horizontal"
+          (label
+            :class "weather-location-details"
+            :xalign 0.5
+          :text "${todays_forecast.city.name}, ${todays_forecast.city.country}"))
+        
+        (box
+          :space-evenly false
+          :valign "center"
+          (box
+            :class {conditions[todays_forecast.list[now].weather[0].description]}
+            :height 100
+          :width 100)
+          
           (box
             :orientation "vertical"
             :space-evenly false
-            (box
-              :class {conditions[todays_forecast.list[now].weather[0].description]}
-              :height 100
-              :width 100
-            )
-            (label
-              :text "${todays_forecast.list[now].dt_txt}"
-            )
+            :valign "center"
+            :class "heat-reader"
             (label
               :text "${todays_forecast.list[now].main.temp}°C"
+              :width 100
+              :xalign 0
             )
-          ))
+            
+            ; (label
+              ;   :text "${todays_forecast.list[now].main.feels_like}°C"
+              ;   :width 60
+              ;   :xalign 0
+            ; )
+          )
+        )
+        ; (box
+          ;   :orientation "horizontal"
+          ;   (box
+            ;     :orientation "vertical"
+            ;     :space-evenly false
+            ;     (label
+              ;       :text "${todays_forecast.list[now].wind.speed}"
+              ;       :width 60
+              ;       :xalign 1
+            ;     )
+            
+            (label
+                :class "weather-time"
+              :text "${todays_forecast.list[now].dt_txt}"
+            )
+          )
+        )
       )
     )
-  )
-)
+    
+    
+    
+    
+    

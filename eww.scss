@@ -4,6 +4,7 @@
 
 $background-color: #022220;
 $border-color: #03201c;
+$weather-text-color: rgb(72, 120, 100);
 
 .overview-left,
 .overview-middle,
@@ -152,67 +153,63 @@ $border-color: #03201c;
   }
 }
 
-.weather-container {
-  border-radius: 25px;
-}
-
-
-.clear-sky, 
-.few-clouds, 
-.scattered-clouds, 
-.broken-clouds, 
-.overcast-clouds, 
-.light-rain, 
-.moderate-rain, 
-.heavy-intensity-rain, 
-.very-heavy-rain, 
-.extreme-rain, 
-.freezing-rain, 
-.light-shower-rain, 
-.shower-rain, 
-.heavy-shower-rain, 
-.ragged-shower-rain, 
-.thunderstorm-light-rain, 
-.thunderstorm-rain, 
-.thunderstorm-heavy-rain, 
-.light-thunderstorm, 
-.thunderstorm, 
-.heavy-thunderstorm, 
-.ragged-thunderstorm, 
-.thunderstorm-light-drizzle, 
-.thunderstorm-drizzle, 
-.thunderstorm-heavy-drizzle, 
-.light-drizzle, 
-.drizzle, 
-.heavy-drizzle, 
-.light-drizzle-rain, 
-.drizzle-rain, 
-.heavy-drizzle-rain, 
-.shower-rain-drizzle, 
-.heavy-shower-rain-drizzle, 
-.shower-drizzle, 
-.light-snow, 
-.snow, 
-.heavy-snow, 
-.sleet, 
-.light-shower-sleet, 
-.shower-sleet, 
-.light-rain-snow, 
-.rain-snow, 
-.light-shower-snow, 
-.shower-snow, 
-.heavy-shower-snow, 
-.mist, 
-.smoke, 
-.haze, 
-.dust, 
-.fog, 
-.sand, 
-.volcanic-ash, 
-.squalls, 
+.clear-sky,
+.few-clouds,
+.scattered-clouds,
+.broken-clouds,
+.overcast-clouds,
+.light-rain,
+.moderate-rain,
+.heavy-intensity-rain,
+.very-heavy-rain,
+.extreme-rain,
+.freezing-rain,
+.light-shower-rain,
+.shower-rain,
+.heavy-shower-rain,
+.ragged-shower-rain,
+.thunderstorm-light-rain,
+.thunderstorm-rain,
+.thunderstorm-heavy-rain,
+.light-thunderstorm,
+.thunderstorm,
+.heavy-thunderstorm,
+.ragged-thunderstorm,
+.thunderstorm-light-drizzle,
+.thunderstorm-drizzle,
+.thunderstorm-heavy-drizzle,
+.light-drizzle,
+.drizzle,
+.heavy-drizzle,
+.light-drizzle-rain,
+.drizzle-rain,
+.heavy-drizzle-rain,
+.shower-rain-drizzle,
+.heavy-shower-rain-drizzle,
+.shower-drizzle,
+.light-snow,
+.snow,
+.heavy-snow,
+.sleet,
+.light-shower-sleet,
+.shower-sleet,
+.light-rain-snow,
+.rain-snow,
+.light-shower-snow,
+.shower-snow,
+.heavy-shower-snow,
+.mist,
+.smoke,
+.haze,
+.dust,
+.fog,
+.sand,
+.volcanic-ash,
+.squalls,
 .tornado {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 .clear-sky {
   background-image: url("assets/weather-images/clear-sky.png");
@@ -428,4 +425,28 @@ $border-color: #03201c;
 
 .tornado {
   background-image: url("assets/weather-images/tornado.png");
+}
+
+.weather-container {
+  border-radius: 25px;
+  padding: 10px 20px 10px 10px;
+}
+
+.weather-location-details {
+  color: $weather-text-color;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.heat-reader {
+  font-size: 24px;
+  font-weight: 400;
+  color: $weather-text-color;
+}
+
+.weather-time {
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: $weather-text-color;
+  font-weight: 400;
 }
