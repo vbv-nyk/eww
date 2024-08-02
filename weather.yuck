@@ -1,0 +1,95 @@
+(deflisten todays_forecast :initial '[{"list": ["Hello World"]}]' `tail -F scripts/data/weather.json`)
+(defvar now 0)
+(defvar conditions `
+  {
+  "clear sky": "clear-sky",
+  "few clouds": "few-clouds",
+  "scattered clouds": "scattered-clouds",
+  "broken clouds": "broken-clouds",
+  "overcast clouds": "overcast-clouds",
+  "light rain": "light-rain",
+  "moderate rain": "moderate-rain",
+  "heavy intensity rain": "heavy-intensity-rain",
+  "very heavy rain": "very-heavy-rain",
+  "extreme rain": "extreme-rain",
+  "freezing rain": "freezing-rain",
+  "light intensity shower rain": "light-shower-rain",
+  "shower rain": "shower-rain",
+  "heavy intensity shower rain": "heavy-shower-rain",
+  "ragged shower rain": "ragged-shower-rain",
+  "light snow": "light-snow",
+  "snow": "snow",
+  "heavy snow": "heavy-snow",
+  "sleet": "sleet",
+  "light shower sleet": "light-shower-sleet",
+  "shower sleet": "shower-sleet",
+  "light rain and snow": "light-rain-snow",
+  "rain and snow": "rain-snow",
+  "light shower snow": "light-shower-snow",
+  "shower snow": "shower-snow",
+  "heavy shower snow": "heavy-shower-snow",
+  "mist": "mist",
+  "smoke": "smoke",
+  "haze": "haze",
+  "dust": "dust",
+  "fog": "fog",
+  "sand": "sand",
+  "ash": "volcanic-ash",
+  "squalls": "squalls",
+  "tornado": "tornado",
+  "thunderstorm with light rain": "thunderstorm-light-rain",
+  "thunderstorm with rain": "thunderstorm-rain",
+  "thunderstorm with heavy rain": "thunderstorm-heavy-rain",
+  "light thunderstorm": "light-thunderstorm",
+  "thunderstorm": "thunderstorm",
+  "heavy thunderstorm": "heavy-thunderstorm",
+  "ragged thunderstorm": "ragged-thunderstorm",
+  "thunderstorm with light drizzle": "thunderstorm-light-drizzle",
+  "thunderstorm with drizzle": "thunderstorm-drizzle",
+  "thunderstorm with heavy drizzle": "thunderstorm-heavy-drizzle",
+  "light intensity drizzle": "light-drizzle",
+  "drizzle": "drizzle",
+  "heavy intensity drizzle": "heavy-drizzle",
+  "light intensity drizzle rain": "light-drizzle-rain",
+  "drizzle rain": "drizzle-rain",
+  "heavy intensity drizzle rain": "heavy-drizzle-rain",
+  "shower rain and drizzle": "shower-rain-drizzle",
+  "heavy shower rain and drizzle": "heavy-shower-rain-drizzle",
+  "shower drizzle": "shower-drizzle"
+  }
+`)
+
+(defwidget weather_root []
+  (box
+    :class "weather-container"
+    :space-evenly false
+    :orientation "horizontal"
+    :valign "center"
+    (scroll
+      :width 300
+      :height 200
+      :hscroll true
+      (box
+        (button
+          :onclick `eww update now=${(now + 1)%(arraylength(todays_forecast.list))}`
+          :onrightclick `eww update now=${now >= 0 ? ((now - 1))%(arraylength(todays_forecast.list)) : arraylength(todays_forecast.list) - 1}`
+          :onmiddleclick `eww update now=${0}`
+          (box
+            :orientation "vertical"
+            :space-evenly false
+            (box
+              :class {conditions[todays_forecast.list[now].weather[0].description]}
+              :height 100
+              :width 100
+            )
+            (label
+              :text "${todays_forecast.list[now].dt_txt}"
+            )
+            (label
+              :text "${todays_forecast.list[now].main.temp}°C"
+            )
+          ))
+      )
+    )
+  )
+)

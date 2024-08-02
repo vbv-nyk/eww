@@ -1,5 +1,6 @@
 (include "overview.yuck")
 (include "profile.yuck")
+(include "weather.yuck")
 
 (defwindow overview
   :monitor 1
@@ -21,3 +22,12 @@
   :wm-ignore false
   (profile_root))
 
+(defwindow weather
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+   geometry :x "55%" :y "30%" 
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (weather_root))
