@@ -26,7 +26,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-   geometry :x "55%" :y "30%" 
+   geometry :x "52%" :y "28%" 
   :anchor "top left")
   :exclusive false
   :wm-ignore false
