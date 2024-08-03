@@ -4,6 +4,9 @@
 (defvar vibrantThemes `["roses", "peaches"]`)
 (defvar lightThemes `["bluey", "melony"]`)
 (defvar darkThemes `["rainforest", "amazon"]`)
+(defvar lightThemesPath "../themes/light")
+(defvar darkThemesPath "../themes/dark")
+(defvar vibrantThemesPath "../themes/vibrant")
 
 (defwidget theme_root []
   (box
@@ -18,21 +21,23 @@
     (box
       :class "themes-emotions-container"
       (button
-        :onclick `eww update currentVibrantTheme=${(currentVibrantTheme + 1)%(arraylength(vibrantThemes))} && notify-send "bash ../themes/${vibrantThemes[currentVibrantTheme]}.sh"`
-        :onrightclick `eww update currentVibrantTheme=${currentVibrantTheme > 0 ? (currentVibrantTheme - 1) : arraylength(vibrantThemes)- 1} && notify-send "bash ../themes/${vibrantThemes[currentVibrantTheme]}.sh"`
+        :onclick `eww update currentVibrantTheme=${(currentVibrantTheme + 1)%(arraylength(vibrantThemes))} && notify-send "bash ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.sh"`
+        :onrightclick `eww update currentVibrantTheme=${currentVibrantTheme > 0 ? (currentVibrantTheme - 1) : arraylength(vibrantThemes)- 1} && notify-send "bash ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.sh"`
         :class "themes-emotion"
-        :onmiddleclick `eww update currentVibrantTheme=${0} && notify-send "bash ../themes/${vibrantThemes[currentVibrantTheme]}.sh"`
+        :onmiddleclick `eww update currentVibrantTheme=${0} && notify-send "bash ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.sh"`
         "🎨"
       )
       (button
-        :onclick `eww update currentDarkTheme=${(currentDarkTheme + 1)%(arraylength(lightThemes))} && notify-send "bash ../themes/${lightThemes[currentDarkTheme]}.sh"`
-        :onrightclick `eww update currentDarkTheme=${currentDarkTheme > 0 ? (currentDarkTheme - 1) : arraylength(lightThemes)- 1} && notify-send "bash ../themes/${lightThemes[currentDarkTheme]}.sh"`
+        :onclick `eww update currentLightTheme=${(currentLightTheme + 1)%(arraylength(lightThemes))} && notify-send "bash ${lightThemesPath}/${lightThemes[currentLightTheme]}.sh"`
+        :onrightclick `eww update currentLightTheme=${currentLightTheme > 0 ? (currentDarkTheme - 1) : arraylength(lightThemes)- 1} && notify-send "bash ${lightThemesPath}/${lightThemes[currentLightTheme]}.sh"`
+        :onmiddleclick `eww update currentLightTheme=${0} && notify-send "bash ${lightThemesPath}/${lightThemes[currentLightTheme]}.sh"`
         :class "themes-emotion"
         "🍀"
       )
       (button
-        :onclick `eww update currentLightTheme=${(currentLightTheme + 1)%(arraylength(darkThemes))} && notify-send "bash ../themes/${darkThemes[currentLightTheme]}.sh"`
-        :onrightclick `eww update currentLightTheme=${currentLightTheme > 0 ? (currentLightTheme - 1) : arraylength(darkThemes)- 1} && notify-send "bash ../themes/${darkThemes[currentLightTheme]}.sh"`
+        :onclick `eww update currentDarkTheme=${(currentDarkTheme + 1)%(arraylength(darkThemes))} && notify-send "bash ${darkThemesPath}/${darkThemes[currentDarkTheme]}.sh"`
+        :onrightclick `eww update currentDarkTheme=${currentDarkTheme > 0 ? (currentDarkTheme - 1) : arraylength(darkThemes)- 1} && notify-send "bash ${darkThemesPath}/${darkThemes[currentDarkTheme]}.sh"`
+        :onmiddleclick `eww update currentDarkTheme=${0} && notify-send "bash ${darkThemesPath}/${darkThemes[currentDarkTheme]}.sh"`
         :class "themes-emotion"
         "🗿"
       )
