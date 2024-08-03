@@ -10,7 +10,7 @@
   transition: border-color 1s;
   .profile-image {
     border-radius: 50%;
-    border: solid 2px white;
+    border: solid 2px variables.$profile-border-color;
     margin-right: 100px;
     margin-left: 100px;
     margin-top: 20px;
@@ -38,14 +38,9 @@
     font-size: 14px;
     margin-top: 10px;
     color: variables.$profile-text-color;
-    letter-spacing: 1px;
-    font-weight: 400;
-  }
-  .profile-contact-phone {
-    font-size: 18px;
-    margin-top: 10px;
     color: variables.$profile-contact-color;
     letter-spacing: 1px;
+    font-weight: 400;
   }
 }
 
