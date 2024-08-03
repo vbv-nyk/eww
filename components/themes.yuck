@@ -1,14 +1,24 @@
-(defvar currentLightTheme 0)
-(defvar currentDarkTheme 0)
-(defvar currentVibrantTheme 0)
-(defvar vibrantThemes `["roses", "peaches"]`)
-(defvar lightThemes `["bluey", "melony"]`)
-(defvar darkThemes `["rainforest", "amazon"]`)
-(defvar lightThemesPath "../themes/light")
-(defvar darkThemesPath "../themes/dark")
-(defvar vibrantThemesPath "../themes/vibrant")
+(defvar vibrantThemes `["theme-1", "theme-2"]`)
+(defvar lightThemes `["theme-1", "theme-2"]`)
+(defvar darkThemes `["theme-1", "theme-2", "theme-3"]`)
+(defvar lightThemesPath "themes/light")
+(defvar darkThemesPath "themes/dark")
+(defvar vibrantThemesPath "themes/vibrant")
+(defvar increaseVibrantCommand `"eww open theme --arg currentVibrantTheme=$\{(currentVibrantTheme + 1)%arraylength(vibrantThemes)\} --arg currentDarkTheme=0 --arg currentLightTheme=0"`)
+(defvar decreaseVibrantCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+(defvar resetVibrantCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
 
-(defwidget theme_root []
+(defvar increaseDarkCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+(defvar decreaseDarkCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+(defvar resetDarkCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+
+
+(defvar increaseLightCommad `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+(defvar decreaseLightCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+(defvar resetLightCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
+
+
+(defwidget theme_root [currentLightTheme currentDarkTheme currentVibrantTheme]
   (box
     :class "themes-container "
     :space-evenly false
@@ -21,23 +31,24 @@
     (box
       :class "themes-emotions-container"
       (button
-        :onclick `eww update currentVibrantTheme=${(currentVibrantTheme + 1)%(arraylength(vibrantThemes))} && notify-send "bash ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.sh"`
-        :onrightclick `eww update currentVibrantTheme=${currentVibrantTheme > 0 ? (currentVibrantTheme - 1) : arraylength(vibrantThemes)- 1} && notify-send "bash ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.sh"`
+        :onclick "${increaseVibrantCommand} && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss"
+        :onrightclick "${decreaseVibrantCommand} && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss"
         :class "themes-emotion"
-        :onmiddleclick `eww update currentVibrantTheme=${0} && notify-send "bash ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.sh"`
+        :onmiddleclick "${resetVibrantCommand} && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss"
         "🎨"
       )
       (button
-        :onclick `eww update currentLightTheme=${(currentLightTheme + 1)%(arraylength(lightThemes))} && notify-send "bash ${lightThemesPath}/${lightThemes[currentLightTheme]}.sh"`
-        :onrightclick `eww update currentLightTheme=${currentLightTheme > 0 ? (currentDarkTheme - 1) : arraylength(lightThemes)- 1} && notify-send "bash ${lightThemesPath}/${lightThemes[currentLightTheme]}.sh"`
-        :onmiddleclick `eww update currentLightTheme=${0} && notify-send "bash ${lightThemesPath}/${lightThemes[currentLightTheme]}.sh"`
+        :onclick "eww open theme --arg currentLightTheme=${(currentLightTheme
+          + 1)%arraylength(lightThemes)} --arg currentDarkTheme=0 --arg currentVibrantTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
+        :onrightclick "${decreaseLightCommand} && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
+        :onmiddleclick "${resetLightCommand} && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
         :class "themes-emotion"
         "🍀"
       )
       (button
-        :onclick `eww update currentDarkTheme=${(currentDarkTheme + 1)%(arraylength(darkThemes))} && notify-send "bash ${darkThemesPath}/${darkThemes[currentDarkTheme]}.sh"`
-        :onrightclick `eww update currentDarkTheme=${currentDarkTheme > 0 ? (currentDarkTheme - 1) : arraylength(darkThemes)- 1} && notify-send "bash ${darkThemesPath}/${darkThemes[currentDarkTheme]}.sh"`
-        :onmiddleclick `eww update currentDarkTheme=${0} && notify-send "bash ${darkThemesPath}/${darkThemes[currentDarkTheme]}.sh"`
+        :onclick "${increaseDarkCommand} && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss"
+        :onrightclick "${increaseDarkCommand} && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss"
+        :onmiddleclick "${resetDarkCommand} && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss"
         :class "themes-emotion"
         "🗿"
       )

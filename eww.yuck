@@ -33,7 +33,7 @@
   :wm-ignore false
   (weather_root))
 
-(defwindow theme
+(defwindow theme [currentLightTheme currentDarkTheme currentVibrantTheme]
   :monitor 1
   :stacking "bottom"
   :geometry (
@@ -41,4 +41,8 @@
   :anchor "top left")
   :exclusive false
   :wm-ignore false
-  (theme_root))
+  (theme_root
+    :currentLightTheme currentLightTheme
+    :currentDarkTheme currentDarkTheme
+    :currentVibrantTheme currentVibrantTheme
+  ))
