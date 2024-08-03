@@ -1,25 +1,26 @@
+@use 'variables.scss';
+
 * {
   all: unset;
 }
 
-$background-color: #022220;
-$border-color: #03201c;
-$text-color: rgb(77, 130, 123);
+
 
 * {
-  color: $text-color;
+  color: variables.$text-color;
 }
+
 
 .overview-left,
 .overview-middle,
 .overview-right {
-  background-color: $background-color;
+  background-color: variables.$background-color;
   font-weight: 800;
   letter-spacing: 2px;
   padding: 20px;
   font-size: 14px;
-  border-top: solid 10px $border-color;
-  border-bottom: solid 10px $border-color;
+  border-top: solid 10px variables.$border-color;
+  border-bottom: solid 10px variables.$border-color;
   animation-name: showup, expand;
   animation-duration: 0.6s, 0.3s;
   animation-iteration-count: 1, 1;
@@ -27,14 +28,14 @@ $text-color: rgb(77, 130, 123);
 }
 
 .overview-middle {
-  border-left: solid 5px $border-color;
-  border-right: solid 5px $border-color;
+  border-left: solid 5px variables.$border-color;
+  border-right: solid 5px variables.$border-color;
 }
 
 .overview-left {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  border-left: solid 10px $border-color;
+  border-left: solid 10px variables.$border-color;
 }
 
 .overview-middle {
@@ -45,7 +46,7 @@ $text-color: rgb(77, 130, 123);
   padding: 20px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  border-right: solid 10px $border-color;
+  border-right: solid 10px variables.$border-color;
 }
 
 @keyframes showup {
@@ -78,15 +79,15 @@ $text-color: rgb(77, 130, 123);
 }
 
 .profile-container {
-  background-color: $background-color;
+  background-color: variables.$background-color;
   border-radius: 15px;
   animation-name: hide-profile, show-profile;
   animation-duration: 1s, 1s;
   animation-delay: 0s, 1s, 2s;
-  border: solid 1px $border-color;
+  border: solid 1px variables.$border-color;
   transition: border-color 1s;
   .profile-image {
-    background-color: $border-color;
+    background-color: variables.$border-color;
     border-radius: 50%;
     border: solid 2px white;
     margin-right: 100px;
@@ -115,14 +116,14 @@ $text-color: rgb(77, 130, 123);
   .profile-contact {
     font-size: 14px;
     margin-top: 10px;
-    color: $text-color;
+    color: variables.$text-color;
     letter-spacing: 1px;
     font-weight: 400;
   }
   .profile-contact-phone {
     font-size: 18px;
     margin-top: 10px;
-    color: rgb(53, 182, 178);
+    color: variables.$contact-color;
     letter-spacing: 1px;
   }
 }
@@ -142,15 +143,6 @@ $text-color: rgb(77, 130, 123);
   }
   to {
     margin-top: 0;
-  }
-}
-
-@keyframes color-border {
-  from {
-    border-color: white;
-  }
-  to {
-    border-color: $border-color;
   }
 }
 
@@ -429,7 +421,7 @@ $text-color: rgb(77, 130, 123);
 }
 
 .weather-container {
-  background-color: #022220;
+  background-color: variables.$background-color;
   border-radius: 25px;
   padding: 10px 20px 10px 10px;
   .weather-location-details {

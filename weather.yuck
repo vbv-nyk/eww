@@ -61,7 +61,7 @@
 
 (defwidget weather_root []
   (box
-    :class "weather-container"
+    :class "weather-container "
     :space-evenly false
     :orientation "horizontal"
     :valign "center"
