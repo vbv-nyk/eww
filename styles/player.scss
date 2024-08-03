@@ -21,10 +21,12 @@
 .current-playing-info {
   margin-top: 8px;
   font-size: 13px;
+    font-weight: 500;
 }
 
 .player-progress-bar {
   padding: 10px 15px;
+    margin: 1px 0px;
 }
 
 .player-progress-bar trough {
@@ -38,7 +40,20 @@
 
 .player-current-position,
 .player-end-position {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bolder;
-  font-weight: 400;
+    font-weight: 700;
+}
+
+
+.player-controls {
+    font-size: 13px;
+}
+
+.control {
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    margin-right: 5px;
+    background-color: variables.$player-border-color;
 }

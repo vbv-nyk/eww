@@ -20,9 +20,9 @@
       )
     )
     (box
-        :space-evenly false
-        :valign "center"
-        :class "current-playing-info"
+      :space-evenly false
+      :valign "center"
+      :class "current-playing-info"
       (label
         :class "player-artist-name"
         :text "Artist name - "
@@ -50,6 +50,22 @@
       (label
         :class "player-end-position"
         :text "3:00"
+      )
+    )
+    (box
+      :class "player-controls"
+      :space-evenly false
+      (button
+        :class "control"
+        "Previous"
+      )
+      (button
+        :class "control"
+        "Pause/Play"
+      )
+      (button
+        :class "control"
+        "Next"
       )
     )
   )
