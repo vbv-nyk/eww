@@ -1,4 +1,4 @@
-@use '../themes/variables.scss';
+@use "../themes/variables.scss";
 
 .clear-sky,
 .few-clouds,
@@ -275,9 +275,11 @@
 }
 
 .weather-container {
-  background-color: variables.$background-color;
+  background-color: variables.$weather-background-color;
   border-radius: 25px;
   padding: 10px 20px 10px 10px;
+  color: variables.$weather-text-color;
+  border-color: variables.$weather-border-color;
   .weather-location-details {
     font-size: 21px;
     font-weight: 800;
