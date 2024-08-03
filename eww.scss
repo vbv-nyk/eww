@@ -4,7 +4,11 @@
 
 $background-color: #022220;
 $border-color: #03201c;
-$weather-text-color: rgb(72, 120, 100);
+$text-color: rgb(77, 130, 123);
+
+* {
+  color: $text-color;
+}
 
 .overview-left,
 .overview-middle,
@@ -44,10 +48,6 @@ $weather-text-color: rgb(72, 120, 100);
   border-right: solid 10px $border-color;
 }
 
-.weather-container {
-  background-color: #022220;
-}
-
 @keyframes showup {
   from {
     margin-left: -300px;
@@ -85,45 +85,46 @@ $weather-text-color: rgb(72, 120, 100);
   animation-delay: 0s, 1s, 2s;
   border: solid 1px $border-color;
   transition: border-color 1s;
-}
+  .profile-image {
+    background-color: $border-color;
+    border-radius: 50%;
+    border: solid 2px white;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 20px;
+    background-image: url("./assets/luffy.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-.profile-image {
-  background-color: $border-color;
-  border-radius: 50%;
-  border: solid 2px white;
-  margin-right: 100px;
-  margin-left: 100px;
-  margin-top: 20px;
-  background-image: url("./assets/luffy.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+  .profile-content {
+    padding: 20px;
+  }
 
-.profile-header {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-.profile-bio {
-  font-size: 18px;
-  font-weight: 400;
-}
+  .profile-header {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .profile-bio {
+    font-size: 16px;
+    font-weight: 600;
+  }
 
-.profile-content {
-  padding: 20px;
-  font-family: Times, serif;
-}
-
-.profile-contact {
-  font-size: 14px;
-  margin-top: 10px;
-  color: rgb(189, 183, 255);
-}
-.profile-contact-phone {
-  font-size: 18px;
-  margin-top: 10px;
-  color: rgb(53, 182, 178);
+  .profile-contact {
+    font-size: 14px;
+    margin-top: 10px;
+    color: $text-color;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+  .profile-contact-phone {
+    font-size: 18px;
+    margin-top: 10px;
+    color: rgb(53, 182, 178);
+    letter-spacing: 1px;
+  }
 }
 
 @keyframes hide-profile {
@@ -428,25 +429,22 @@ $weather-text-color: rgb(72, 120, 100);
 }
 
 .weather-container {
+  background-color: #022220;
   border-radius: 25px;
   padding: 10px 20px 10px 10px;
-}
+  .weather-location-details {
+    font-size: 21px;
+    font-weight: 800;
+  }
 
-.weather-location-details {
-  color: $weather-text-color;
-  font-size: 21px;
-  font-weight: 800;
-}
+  .heat-reader {
+    font-size: 24px;
+    font-weight: 400;
+  }
 
-.heat-reader {
-  font-size: 24px;
-  font-weight: 400;
-  color: $weather-text-color;
-}
-
-.weather-time {
-  font-size: 13px;
-  letter-spacing: 1px;
-  color: $weather-text-color;
-  font-weight: 400;
+  .weather-time {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
 }
