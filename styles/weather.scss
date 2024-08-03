@@ -1,0 +1,296 @@
+@use '../themes/variables.scss';
+
+.clear-sky,
+.few-clouds,
+.scattered-clouds,
+.broken-clouds,
+.overcast-clouds,
+.light-rain,
+.moderate-rain,
+.heavy-intensity-rain,
+.very-heavy-rain,
+.extreme-rain,
+.freezing-rain,
+.light-shower-rain,
+.shower-rain,
+.heavy-shower-rain,
+.ragged-shower-rain,
+.thunderstorm-light-rain,
+.thunderstorm-rain,
+.thunderstorm-heavy-rain,
+.light-thunderstorm,
+.thunderstorm,
+.heavy-thunderstorm,
+.ragged-thunderstorm,
+.thunderstorm-light-drizzle,
+.thunderstorm-drizzle,
+.thunderstorm-heavy-drizzle,
+.light-drizzle,
+.drizzle,
+.heavy-drizzle,
+.light-drizzle-rain,
+.drizzle-rain,
+.heavy-drizzle-rain,
+.shower-rain-drizzle,
+.heavy-shower-rain-drizzle,
+.shower-drizzle,
+.light-snow,
+.snow,
+.heavy-snow,
+.sleet,
+.light-shower-sleet,
+.shower-sleet,
+.light-rain-snow,
+.rain-snow,
+.light-shower-snow,
+.shower-snow,
+.heavy-shower-snow,
+.mist,
+.smoke,
+.haze,
+.dust,
+.fog,
+.sand,
+.volcanic-ash,
+.squalls,
+.tornado {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.clear-sky {
+  background-image: url("assets/weather-images/clear-sky.png");
+}
+
+.few-clouds {
+  background-image: url("assets/weather-images/few-clouds.png");
+}
+
+.scattered-clouds {
+  background-image: url("assets/weather-images/scattered-clouds.png");
+}
+
+.broken-clouds {
+  background-image: url("assets/weather-images/broken-clouds.png");
+}
+
+.overcast-clouds {
+  background-image: url("assets/weather-images/overcast-clouds.png");
+}
+
+.light-rain {
+  background-image: url("assets/weather-images/light-rain.png");
+}
+
+.moderate-rain {
+  background-image: url("assets/weather-images/moderate-rain.png");
+}
+
+.heavy-intensity-rain {
+  background-image: url("assets/weather-images/heavy-intensity-rain.png");
+}
+
+.very-heavy-rain {
+  background-image: url("assets/weather-images/very-heavy-rain.png");
+}
+
+.extreme-rain {
+  background-image: url("assets/weather-images/extreme-rain.png");
+}
+
+.freezing-rain {
+  background-image: url("assets/weather-images/freezing-rain.png");
+}
+
+.light-shower-rain {
+  background-image: url("assets/weather-images/light-shower-rain.png");
+}
+
+.shower-rain {
+  background-image: url("assets/weather-images/shower-rain.png");
+}
+
+.heavy-shower-rain {
+  background-image: url("assets/weather-images/heavy-shower-rain.png");
+}
+
+.ragged-shower-rain {
+  background-image: url("assets/weather-images/ragged-shower-rain.png");
+}
+
+.thunderstorm-light-rain {
+  background-image: url("assets/weather-images/thunderstorm-light-rain.png");
+}
+
+.thunderstorm-rain {
+  background-image: url("assets/weather-images/thunderstorm-rain.png");
+}
+
+.thunderstorm-heavy-rain {
+  background-image: url("assets/weather-images/thunderstorm-heavy-rain.png");
+}
+
+.light-thunderstorm {
+  background-image: url("assets/weather-images/light-thunderstorm.png");
+}
+
+.thunderstorm {
+  background-image: url("assets/weather-images/thunderstorm.png");
+}
+
+.heavy-thunderstorm {
+  background-image: url("assets/weather-images/heavy-thunderstorm.png");
+}
+
+.ragged-thunderstorm {
+  background-image: url("assets/weather-images/ragged-thunderstorm.png");
+}
+
+.thunderstorm-light-drizzle {
+  background-image: url("assets/weather-images/thunderstorm-light-drizzle.png");
+}
+
+.thunderstorm-drizzle {
+  background-image: url("assets/weather-images/thunderstorm-drizzle.png");
+}
+
+.thunderstorm-heavy-drizzle {
+  background-image: url("assets/weather-images/thunderstorm-heavy-drizzle.png");
+}
+
+.light-drizzle {
+  background-image: url("assets/weather-images/light-drizzle.png");
+}
+
+.drizzle {
+  background-image: url("assets/weather-images/drizzle.png");
+}
+
+.heavy-drizzle {
+  background-image: url("assets/weather-images/heavy-drizzle.png");
+}
+
+.light-drizzle-rain {
+  background-image: url("assets/weather-images/light-drizzle-rain.png");
+}
+
+.drizzle-rain {
+  background-image: url("assets/weather-images/drizzle-rain.png");
+}
+
+.heavy-drizzle-rain {
+  background-image: url("assets/weather-images/heavy-drizzle-rain.png");
+}
+
+.shower-rain-drizzle {
+  background-image: url("assets/weather-images/shower-rain-drizzle.png");
+}
+
+.heavy-shower-rain-drizzle {
+  background-image: url("assets/weather-images/heavy-shower-rain-drizzle.png");
+}
+
+.shower-drizzle {
+  background-image: url("assets/weather-images/shower-drizzle.png");
+}
+
+.light-snow {
+  background-image: url("assets/weather-images/light-snow.png");
+}
+
+.snow {
+  background-image: url("assets/weather-images/snow.png");
+}
+
+.heavy-snow {
+  background-image: url("assets/weather-images/heavy-snow.png");
+}
+
+.sleet {
+  background-image: url("assets/weather-images/sleet.png");
+}
+
+.light-shower-sleet {
+  background-image: url("assets/weather-images/light-shower-sleet.png");
+}
+
+.shower-sleet {
+  background-image: url("assets/weather-images/shower-sleet.png");
+}
+
+.light-rain-snow {
+  background-image: url("assets/weather-images/light-rain-snow.png");
+}
+
+.rain-snow {
+  background-image: url("assets/weather-images/rain-snow.png");
+}
+
+.light-shower-snow {
+  background-image: url("assets/weather-images/light-shower-snow.png");
+}
+
+.shower-snow {
+  background-image: url("assets/weather-images/shower-snow.png");
+}
+
+.heavy-shower-snow {
+  background-image: url("assets/weather-images/heavy-shower-snow.png");
+}
+
+.mist {
+  background-image: url("assets/weather-images/mist.png");
+}
+
+.smoke {
+  background-image: url("assets/weather-images/smoke.png");
+}
+
+.haze {
+  background-image: url("assets/weather-images/haze.png");
+}
+
+.dust {
+  background-image: url("assets/weather-images/dust.png");
+}
+
+.fog {
+  background-image: url("assets/weather-images/fog.png");
+}
+
+.sand {
+  background-image: url("assets/weather-images/sand.png");
+}
+
+.volcanic-ash {
+  background-image: url("assets/weather-images/volcanic-ash.png");
+}
+
+.squalls {
+  background-image: url("assets/weather-images/squalls.png");
+}
+
+.tornado {
+  background-image: url("assets/weather-images/tornado.png");
+}
+
+.weather-container {
+  background-color: variables.$background-color;
+  border-radius: 25px;
+  padding: 10px 20px 10px 10px;
+  .weather-location-details {
+    font-size: 21px;
+    font-weight: 800;
+  }
+
+  .heat-reader {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .weather-time {
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
+}
