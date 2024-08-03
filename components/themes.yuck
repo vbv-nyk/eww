@@ -4,18 +4,7 @@
 (defvar lightThemesPath "themes/light")
 (defvar darkThemesPath "themes/dark")
 (defvar vibrantThemesPath "themes/vibrant")
-(defvar increaseVibrantCommand `"eww open theme --arg currentVibrantTheme=$\{(currentVibrantTheme + 1)%arraylength(vibrantThemes)\} --arg currentDarkTheme=0 --arg currentLightTheme=0"`)
-(defvar decreaseVibrantCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
-(defvar resetVibrantCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
 
-(defvar increaseDarkCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
-(defvar decreaseDarkCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
-(defvar resetDarkCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
-
-
-(defvar increaseLightCommad `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
-(defvar decreaseLightCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
-(defvar resetLightCommand `eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0`)
 
 
 (defwidget theme_root [currentLightTheme currentDarkTheme currentVibrantTheme]
@@ -31,25 +20,24 @@
     (box
       :class "themes-emotions-container"
       (button
-        :onclick "${increaseVibrantCommand} && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss"
-        :onrightclick "${decreaseVibrantCommand} && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss"
+        :onclick "eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0 && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
+        :onrightclick "eww open theme --arg currentVibrantTheme=${currentVibrantTheme > 0 ? currentVibrantTheme - 1 :  arraylength(vibrantThemes) - 1 } --arg currentDarkTheme=0 --arg currentLightTheme=0 && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
         :class "themes-emotion"
-        :onmiddleclick "${resetVibrantCommand} && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss"
+        :onmiddleclick "eww open theme --arg currentVibrantTheme=${0} --arg currentDarkTheme=0 --arg currentLightTheme=0 && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
         "🎨"
       )
       (button
-        :onclick "eww open theme --arg currentLightTheme=${(currentLightTheme
-          + 1)%arraylength(lightThemes)} --arg currentDarkTheme=0 --arg currentVibrantTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
-        :onrightclick "${decreaseLightCommand} && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
-        :onmiddleclick "${resetLightCommand} && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
+        :onclick "eww open theme --arg currentLightTheme=${(currentLightTheme + 1)%arraylength(lightThemes)} --arg currentVibrantTheme=0 --arg currentDarkTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
+        :onrightclick "eww open theme --arg currentLightTheme=${currentLightTheme > 0 ? currentLightTheme - 1 :  arraylength(lightThemes) - 1 } --arg currentDarkTheme=0 --arg currentVibrantTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss && eww reload"
+        :onmiddleclick "eww open theme --arg currentLightTheme=${0} --arg currentVibrantTheme=0 --arg currentDarkTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
         :class "themes-emotion"
         "🍀"
       )
       (button
-        :onclick "${increaseDarkCommand} && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss"
-        :onrightclick "${increaseDarkCommand} && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss"
-        :onmiddleclick "${resetDarkCommand} && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss"
-        :class "themes-emotion"
+        :onclick "eww open theme --arg currentDarkTheme=${(currentDarkTheme + 1)%arraylength(darkThemes)} --arg currentVibrantTheme=0 --arg currentLightTheme=0 && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
+        :onrightclick "eww open theme --arg currentDarkTheme=${currentDarkTheme > 0 ? currentDarkTheme - 1 :  arraylength(darkThemes) - 1 } --arg currentLightTheme=0 --arg currentVibrantTheme=0 && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
+        :onmiddleclick "eww open theme --arg currentDarkTheme=${0} --arg currentVibrantTheme=0 --arg currentLightTheme=0 && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
+        :class "themes-emotion "
         "🗿"
       )
     )
