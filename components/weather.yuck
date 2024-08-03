@@ -117,7 +117,7 @@
             ;     )
             
             (label
-                :class "weather-time"
+              :class "weather-time"
               :text "${todays_forecast.list[now].dt_txt}"
             )
           )

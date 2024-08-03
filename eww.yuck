@@ -2,6 +2,7 @@
 (include "components/profile.yuck")
 (include "components/weather.yuck")
 (include "components/themes.yuck")
+(include "components/player.yuck")
 
 (defwindow overview
   :monitor 1
@@ -17,7 +18,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-   geometry :x "9%" :y "28%" :width "40%"
+    geometry :x "9%" :y "28%" :width "40%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -27,7 +28,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-   geometry :x "52%" :y "28%" 
+    geometry :x "52%" :y "28%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -37,7 +38,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-   geometry :x "78%" :y "28%" 
+    geometry :x "78%" :y "28%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -45,4 +46,15 @@
     :currentLightTheme currentLightTheme
     :currentDarkTheme currentDarkTheme
     :currentVibrantTheme currentVibrantTheme
+  ))
+
+(defwindow player
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+    geometry :x "52%" :y "63%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (player_root
   ))

@@ -1,0 +1,56 @@
+(defwidget player_root []
+  (box
+    :class "player-container"
+    :space-evenly false
+    :orientation "vertical"
+    :valign "center"
+    (box
+      :orientation "horizontal"
+      :space-evenly false
+      
+      (label
+        :text "Media Player"
+        :class "player-header"
+      )
+      (label
+        :text "Source"
+        :class "player-source"
+        :xalign 1
+        :yalign 0.8
+      )
+    )
+    (box
+        :space-evenly false
+        :valign "center"
+        :class "current-playing-info"
+      (label
+        :class "player-artist-name"
+        :text "Artist name - "
+        :xalign 0
+      )
+      (label
+        :class "player-song-name"
+        :text "Song Name"
+        :xalign 0
+      )
+    )
+    (box
+      :class "player-seek-container"
+      :valign "center"
+      :space-evenly false
+      (label
+        :class "player-current-position"
+        :text "0:00"
+      )
+      (progress
+        :class "player-progress-bar"
+        :value {100/(3*60) * 100}
+        :orientation "h"
+      )
+      (label
+        :class "player-end-position"
+        :text "3:00"
+      )
+    )
+  )
+)

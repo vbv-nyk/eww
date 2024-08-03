@@ -1,0 +1,44 @@
+@use "../themes/variables.scss";
+
+.player-container {
+  background-color: variables.$player-background-color;
+  border: solid 3px variables.$player-border-color;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.player-header {
+  color: variables.$player-text-color;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.player-source {
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.current-playing-info {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.player-progress-bar {
+  padding: 10px 15px;
+}
+
+.player-progress-bar trough {
+  background-color: variables.$player-text-color;
+  border: solid 3px variables.$player-border-color;
+}
+
+.player-progress-bar trough .left {
+  background-color: variables.$player-background-color;
+}
+
+.player-current-position,
+.player-end-position {
+  font-size: 13px;
+  font-weight: bolder;
+  font-weight: 400;
+}
