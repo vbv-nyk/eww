@@ -1,0 +1,23 @@
+@use "../themes/variables.scss";
+
+.themes-container {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: variables.$themes-background-color;
+}
+
+.themes-header {
+  color: variables.$themes-text-color;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.themes-emotions-container {
+  padding: 20px;
+  background-color: variables.$themes-emotions-container-background-color;
+}
+.themes-emotion {
+  font-size: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
