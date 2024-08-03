@@ -1,6 +1,7 @@
 (include "components/overview.yuck")
 (include "components/profile.yuck")
 (include "components/weather.yuck")
+(include "components/themes.yuck")
 
 (defwindow overview
   :monitor 1
@@ -16,7 +17,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-   geometry :x "10%" :y "28%" :height "80%" :width "40%"
+   geometry :x "9%" :y "28%" :height "80%" :width "40%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -31,3 +32,13 @@
   :exclusive false
   :wm-ignore false
   (weather_root))
+
+(defwindow theme
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+   geometry :x "78%" :y "28%" 
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (theme_root))

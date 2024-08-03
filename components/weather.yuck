@@ -65,7 +65,6 @@
     :space-evenly false
     :orientation "horizontal"
     :valign "center"
-    :hscroll true
     (button
       :onclick `eww update now=${(now + 1)%(arraylength(todays_forecast.list))}`
       :onrightclick `eww update now=${now >= 0 ? ((now - 1))%(arraylength(todays_forecast.list)) : arraylength(todays_forecast.list) - 1}`
