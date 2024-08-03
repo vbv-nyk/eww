@@ -3,6 +3,7 @@
 .themes-container {
   padding: 10px;
   border-radius: 25px;
+  border: solid 3px variables.$weather-border-color;
   background-color: variables.$themes-background-color;
 }
 

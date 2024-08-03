@@ -278,8 +278,8 @@
   background-color: variables.$weather-background-color;
   border-radius: 25px;
   padding: 10px;
+  border: solid 3px variables.$weather-border-color;
   color: variables.$weather-text-color;
-  border-color: variables.$weather-border-color;
   .weather-location-details {
     font-size: 21px;
     font-weight: 800;

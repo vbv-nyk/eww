@@ -1,6 +1,7 @@
-(defvar vibrantThemes `["theme-1", "theme-2"]`)
-(defvar lightThemes `["theme-1", "theme-2"]`)
-(defvar darkThemes `["theme-1", "theme-2", "theme-3"]`)
+(defvar vibrantThemes `["theme-1", "theme-2", "theme-3", "theme-4", "theme-5"]`)
+(defvar lightThemes `["theme-1", "theme-2", "theme-3", "theme-4", "theme-5"]`)
+(defvar darkThemes `["theme-1", "theme-2", "theme-3", "theme-4", "theme-5"]`)
+
 (defvar lightThemesPath "themes/light")
 (defvar darkThemesPath "themes/dark")
 (defvar vibrantThemesPath "themes/vibrant")
