@@ -1,15 +1,14 @@
 @use '../themes/variables.scss';
 
 .profile-container {
-  background-color: variables.$background-color;
+  background-color: variables.$profile-background-color;
   border-radius: 15px;
   animation-name: hide-profile, show-profile;
   animation-duration: 1s, 1s;
   animation-delay: 0s, 1s, 2s;
-  border: solid 1px variables.$border-color;
+  border: solid 1px variables.$profile-border-color;
   transition: border-color 1s;
   .profile-image {
-    background-color: variables.$border-color;
     border-radius: 50%;
     border: solid 2px white;
     margin-right: 100px;
@@ -38,14 +37,14 @@
   .profile-contact {
     font-size: 14px;
     margin-top: 10px;
-    color: variables.$text-color;
+    color: variables.$profile-text-color;
     letter-spacing: 1px;
     font-weight: 400;
   }
   .profile-contact-phone {
     font-size: 18px;
     margin-top: 10px;
-    color: variables.$contact-color;
+    color: variables.$profile-contact-color;
     letter-spacing: 1px;
   }
 }
