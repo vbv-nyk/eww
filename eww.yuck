@@ -1,6 +1,6 @@
-(include "overview.yuck")
-(include "profile.yuck")
-(include "weather.yuck")
+(include "components/overview.yuck")
+(include "components/profile.yuck")
+(include "components/weather.yuck")
 
 (defwindow overview
   :monitor 1
