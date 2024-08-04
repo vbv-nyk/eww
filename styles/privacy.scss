@@ -2,8 +2,8 @@
 
 
 .privacy-controls-container {
-  background-color: variables.$player-background-color;
-  border: solid 3px variables.$player-border-color;
+  background-color: variables.$privacy-background-color;
+  border: solid 3px variables.$privacy-border-color;
   padding: 20px;
   border-radius: 25px;
 }
@@ -20,12 +20,13 @@
 .privacy-control {
   font-weight: 700;
   margin-right: 5px;
-  background-size: 25px 25px;
+  background-size: 30px 30px;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 50%;
+  border: solid 1px variables.$privacy-text-color;
   background-blend-mode: multiply;
-  background-color: rgba(variables.$player-text-color, 0.5);
+  background-color: rgba(variables.$player-text-color, 1);
 }
 
 .speaker-mute {
@@ -38,7 +39,7 @@
 
 .mic-mute {
   background-image: url("./assets/privacy/muted.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
 }
 
 .mic-unmute {
@@ -51,4 +52,13 @@
 
 .bluetooth-off {
   background-image: url("./assets/privacy/bluetooth-off.png");
+}
+
+.wifi-on {
+  background-image: url("./assets/privacy/wifi-on.png");
+  background-size: 30px 30px;
+}
+
+.wifi-off {
+  background-image: url("./assets/privacy/wifi-off.png");
 }

@@ -42,7 +42,7 @@
 
 .player-progress-bar trough {
   background-color: variables.$player-background-color;
-  border: solid 2px variables.$player-border-color;
+  border: solid 2px variables.$player-text-color;
   border-radius: 5px;
 }
 
@@ -74,6 +74,7 @@
 }
 
 .prev {
+  background-size: 27px 27px;
   background-image: url("./assets/player/previous.png");
 }
 
@@ -86,6 +87,7 @@
 }
 
 .next {
+  background-size: 27px 27px;
   background-image: url("./assets/player/next.png");
 }
 

@@ -1,6 +1,7 @@
-(defpoll is_sound_muted  :interval "0.1s" `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '/Volume/ {print $3}'`)
-(defpoll is_mic_muted  :interval "0.1s" `wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '/Volume/ {print $3}'`)
-(defpoll is_bluetooth_on :interval "0.1s" `bluetoothctl show |  awk '/PowerState/ {print $2}'`)
+(defpoll is_sound_muted  :interval "0.3s" `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '/Volume/ {print $3}'`)
+(defpoll is_mic_muted  :interval "0.3s" `wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '/Volume/ {print $3}'`)
+(defpoll is_bluetooth_on :interval "0.3s" `bluetoothctl show |  awk '/PowerState/ {print $2}'`)
+(defpoll is_wifi_on :interval "0.3s" `iwctl device wlan0 show | awk '/Powered/ {print $4}'`)
 
 (defwidget privacy_root []
   (box
@@ -33,6 +34,12 @@
         :width 35
         :class `privacy-control ${is_bluetooth_on == "on" ? "bluetooth-on" : "bluetooth-off"}`
         :onclick `bluetoothctl power ${is_bluetooth_on == "on" ? "off" : "on"}`
+      )
+      (button
+        :height 30
+        :width 35
+        :class `privacy-control ${is_wifi_on == "on" ? "wifi-on" : "wifi-off"}`
+        :onclick `iwctl device wlan0 set-property Powered ${is_wifi_on == "on" ? "off" : "on"}`
       )
     )
   )
