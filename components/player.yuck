@@ -1,10 +1,10 @@
-(defpoll current_player :interval "1s" :initial "No players found" `playerctl metadata --format {{playerName}}` )
-(defpoll total_length :interval "1s" :initial "0:00" `playerctl metadata --format "{{duration(mpris:length)}}"`)
-(defpoll current_song :interval "1s" :initial "Song" `playerctl metadata --format "{{title}}"`)
-(defpoll current_position :interval "1s" :initial "0:00" `playerctl position --format "{{duration(position)}}"`)
-(defpoll current_status :interval "0.1s" :initial "0:00" `playerctl status`)
-(defpoll current_position_in_ms :interval "1s" :initial 0 `playerctl position --format "{{duration(position)}}" | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }'`)
-(defpoll total_length_in_ms :interval "1s" :initial 0 `playerctl metadata --format "{{duration(mpris:length)}}" | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }'`)
+(defpoll current_player :interval "1s" :initial "No players found" `playerctl metadata --format {{playerName}} 2>/dev/null || echo "No players found"` )
+(defpoll total_length :interval "1s" :initial "0:00" `playerctl metadata --format "{{duration(mpris:length)}}" 2>/dev/null || echo "0:00"`)
+(defpoll current_song :interval "1s" :initial "Song/Video" `playerctl metadata --format "{{title}}" 2>/dev/null || echo "Song/Video"`)
+(defpoll current_position :interval "1s" :initial "0:00" `playerctl position --format "{{duration(position)}}" 2>/dev/null || echo "0:00" `)
+(defpoll current_status :interval "0.1s" `playerctl status 2>/dev/null || echo "No players found"`)
+(defpoll current_position_in_ms :interval "1s" :initial 0 `(playerctl position --format "{{duration(position)}}"  2>/dev/null || echo "0:00") | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }'`)
+(defpoll total_length_in_ms :interval "1s" :initial 0 `(playerctl metadata --format "{{duration(mpris:length)}}" 2>/dev/null || echo "0:00") | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }' || echo 0 `)
 
 (defwidget player_root []
   (box
@@ -48,7 +48,7 @@
       )
       (progress
         :class "player-progress-bar"
-        :value {current_position_in_ms/total_length_in_ms * 100}
+        :value {current_player != "No players found" ? current_position_in_ms/total_length_in_ms * 100 : 1}
         :orientation "h"
       )
       (label

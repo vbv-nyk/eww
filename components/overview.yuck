@@ -1,4 +1,4 @@
-(deflisten date `date "+%A %D"`)
+(defpoll date :interval "10000s" `date "+%A %D"`)
 
 (defwidget overview_root []
   (box :class "container" :orientation "vertical"

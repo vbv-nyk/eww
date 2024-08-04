@@ -41,13 +41,13 @@
 }
 
 .player-progress-bar trough {
-  background-color: variables.$player-text-color;
+  background-color: variables.$player-background-color;
   border: solid 2px variables.$player-border-color;
   border-radius: 5px;
 }
 
 .player-progress-bar trough .left {
-  background-color: variables.$player-background-color;
+  background-color: variables.$player-text-color;
 }
 
 .player-current-position,
