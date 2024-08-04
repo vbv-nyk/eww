@@ -1,0 +1,18 @@
+@use '../themes/variables.scss';
+
+.motto-container {
+    padding: 10px;
+  background-color: variables.$motto-background-color;
+  border-radius: 15px;
+  border: solid 3px variables.$motto-border-color;
+}
+
+.motto-text {
+    letter-spacing: 1px;
+          font-weight: 500;
+}
+
+.motto-author {
+    letter-spacing: 1px;
+      font-weight: 400;
+}

@@ -1,0 +1,21 @@
+(defwidget motto_root []
+  (box
+    :class "motto-container"
+    :space-evenly false
+    :valign "center"
+    :orientation "vertical"
+    (label
+      :class "motto-text"
+      :wrap true
+      :width 400
+      :height 70
+      :text "You should enjoy the little detours to the fullest. Because that's where you'll find the things more important than what you want."
+    )
+    (label
+      :class "motto-author"
+      :wrap true
+      :xalign 0.9
+      :text "- Ging Freecss"
+    )
+  )
+)
