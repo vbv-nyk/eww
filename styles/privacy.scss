@@ -1,0 +1,54 @@
+@use "../themes/variables.scss";
+
+
+.privacy-controls-container {
+  background-color: variables.$player-background-color;
+  border: solid 3px variables.$player-border-color;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+.privacy-header {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.main-controls-container {
+    margin-top: 15px;
+}
+
+.privacy-control {
+  font-weight: 700;
+  margin-right: 5px;
+  background-size: 25px 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-blend-mode: multiply;
+  background-color: rgba(variables.$player-text-color, 0.5);
+}
+
+.speaker-mute {
+  background-image: url("./assets/privacy/speaker-off.png");
+}
+
+.speaker-unmute {
+  background-image: url("./assets/privacy/speaker-on.png");
+}
+
+.mic-mute {
+  background-image: url("./assets/privacy/muted.png");
+  background-size: 30px 30px;
+}
+
+.mic-unmute {
+  background-image: url("./assets/privacy/unmuted.png");
+}
+
+.bluetooth-on {
+  background-image: url("./assets/privacy/bluetooth-on.png");
+}
+
+.bluetooth-off {
+  background-image: url("./assets/privacy/bluetooth-off.png");
+}

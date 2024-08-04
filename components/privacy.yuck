@@ -1,0 +1,39 @@
+(defpoll is_sound_muted  :interval "0.1s" `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '/Volume/ {print $3}'`)
+(defpoll is_mic_muted  :interval "0.1s" `wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | awk '/Volume/ {print $3}'`)
+(defpoll is_bluetooth_on :interval "0.1s" `bluetoothctl show |  awk '/PowerState/ {print $2}'`)
+
+(defwidget privacy_root []
+  (box
+    :class "privacy-controls-container"
+    :space-evenly false
+    :valign "center"
+    :orientation "vertical"
+    (box
+        :class "privacy-header"
+        "Quick Controls"
+    )
+    (box
+      :class "main-controls-container"
+      :space-evenly false
+      :halign "start"
+      (button
+        :height 30
+        :width 35
+        :class `privacy-control ${is_sound_muted == "[MUTED]" ? "speaker-mute" : "speaker-unmute"}`
+        :onclick `wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle`
+      )
+      (button
+        :height 30
+        :width 35
+        :class `privacy-control ${is_mic_muted == "[MUTED]" ? "mic-mute" : "mic-unmute"}`
+        :onclick `wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle`
+      )
+      (button
+        :height 30
+        :width 35
+        :class `privacy-control ${is_bluetooth_on == "on" ? "bluetooth-on" : "bluetooth-off"}`
+        :onclick `bluetoothctl power ${is_bluetooth_on == "on" ? "off" : "on"}`
+      )
+    )
+  )
+)
