@@ -55,17 +55,21 @@
     (box
       :class "player-controls"
       :space-evenly false
+      :halign "center"
+        (button
+          :height 30
+          :width 35
+          :class "control prev"
+        )
       (button
-        :class "control"
-        "Previous"
+        :height 30
+        :width 35
+        :class "control pause"
       )
       (button
-        :class "control"
-        "Pause/Play"
-      )
-      (button
-        :class "control"
-        "Next"
+        :height 30
+        :width 35
+        :class "control next"
       )
     )
   )
