@@ -4,42 +4,43 @@
 (include "components/themes.yuck")
 (include "components/player.yuck")
 (include "components/privacy.yuck")
+(include "components/motto.yuck")
 
 (defwindow overview
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (geometry :x "10%"
-    :y "10%"
+    :y "4%"
   :anchor "top center")
   :exclusive false
   :wm-ignore false
   (overview_root))
 
 (defwindow profile
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "9%" :y "30%" :width "40%"
+    geometry :x "5%" :y "26%" :width "40%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
   (profile_root))
 
 (defwindow weather
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "52%" :y "28%"
+    geometry :x "48%" :y "21%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
   (weather_root))
 
 (defwindow theme [currentLightTheme currentDarkTheme currentVibrantTheme]
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "78%" :y "28%"
+    geometry :x "74%" :y "26%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -50,10 +51,10 @@
   ))
 
 (defwindow player
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "52%" :y "63%"
+    geometry :x "84%" :y "56%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -61,12 +62,23 @@
   ))
 
 (defwindow privacy
-  :monitor 0
+  :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "85%" :y "63%"
+    geometry :x "48%" :y "91%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
   (privacy_root
+  ))
+
+(defwindow motto
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+    geometry :x "70%" :y "91%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (motto_root
   ))
