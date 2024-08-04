@@ -24,6 +24,17 @@
   font-weight: 500;
 }
 
+.player-song-name {
+  font-size: 17px;
+  padding: 5px 0px;
+  font-weight: 500;
+}
+
+.player-artist-name {
+  font-size: small;
+  font-weight: 400;
+}
+
 .player-progress-bar {
   padding: 10px 15px;
   margin: 1px 0px;
@@ -69,6 +80,10 @@
 
 .pause {
   background-image: url("./assets/player/pause.png");
+}
+
+.play {
+  background-image: url("./assets/player/play.png");
 }
 
 .next {

@@ -1,3 +1,11 @@
+(defpoll current_player :interval "1s" :initial "No players found" `playerctl metadata --format {{playerName}}` )
+(defpoll total_length :interval "1s" :initial "0:00" `playerctl metadata --format "{{duration(mpris:length)}}"`)
+(defpoll current_song :interval "1s" :initial "Song" `playerctl metadata --format "{{title}}"`)
+(defpoll current_position :interval "1s" :initial "0:00" `playerctl position --format "{{duration(position)}}"`)
+(defpoll current_status :interval "0.1s" :initial "0:00" `playerctl status`)
+(defpoll current_position_in_ms :interval "1s" :initial 0 `playerctl position --format "{{duration(position)}}" | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }'`)
+(defpoll total_length_in_ms :interval "1s" :initial 0 `playerctl metadata --format "{{duration(mpris:length)}}" | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }'`)
+
 (defwidget player_root []
   (box
     :class "player-container"
@@ -13,24 +21,19 @@
         :class "player-header"
       )
       (label
-        :text "Source"
+        :text current_player
         :class "player-source"
-        :xalign 1
-        :yalign 0.8
       )
     )
     (box
       :space-evenly false
       :valign "center"
+      :orientation "vertical"
       :class "current-playing-info"
       (label
-        :class "player-artist-name"
-        :text "Artist name - "
-        :xalign 0
-      )
-      (label
         :class "player-song-name"
-        :text "Song Name"
+        :text "${current_song}"
+        :limit-width 50
         :xalign 0
       )
     )
@@ -40,36 +43,40 @@
       :space-evenly false
       (label
         :class "player-current-position"
-        :text "0:00"
+        :text current_position
+        :width 30
       )
       (progress
         :class "player-progress-bar"
-        :value {100/(3*60) * 100}
+        :value {current_position_in_ms/total_length_in_ms * 100}
         :orientation "h"
       )
       (label
         :class "player-end-position"
-        :text "3:00"
+        :text total_length
       )
     )
     (box
       :class "player-controls"
       :space-evenly false
       :halign "center"
-        (button
-          :height 30
-          :width 35
-          :class "control prev"
-        )
       (button
         :height 30
         :width 35
-        :class "control pause"
+        :class "control prev"
+        :onclick `playerctl previous`
+      )
+      (button
+        :height 30
+        :width 35
+        :class `control ${current_status == "Playing" ? "play" : "pause"}`
+        :onclick `playerctl play-pause`
       )
       (button
         :height 30
         :width 35
         :class "control next"
+        :onclick `playerctl next`
       )
     )
   )
