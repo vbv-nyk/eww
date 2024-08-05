@@ -5,8 +5,8 @@
     :orientation "vertical"
     :valign "center"
     (box
-      :height 200
-      :width 200
+      :height 187
+      :width 187
       :class "profile-image"
     )
     (box

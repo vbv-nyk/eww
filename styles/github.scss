@@ -1,0 +1,14 @@
+@use "../themes/variables.scss";
+
+.github-container {
+  background-color: variables.$motto-background-color;
+  border-radius: 15px;
+  border: solid 3px variables.$motto-border-color;
+}
+
+.github-text {
+  letter-spacing: 1px;
+  font-size: large;
+  font-weight: 700;
+}
+

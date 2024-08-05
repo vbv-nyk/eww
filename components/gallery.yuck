@@ -1,8 +1,34 @@
+(defpoll current_hour :interval "5s" `date | awk '/Mon/ {print $4}' | awk -F : '{print $1}'`)
+(defpoll current_minute :interval "5s" `date | awk '/Mon/ {print $4}' | awk -F : '{print $2}'`)
+(deflisten am_or_pm `date | awk '/Mon/ {print $5}'`)
+
 (defwidget gallery_root []
-  (image
+  (box
     :class "gallery-container"
     :width 320
     :height 150
-    :valign "center"
+    :space-evenly false
+    :orientation "vertical"
+    (box
+      :space-evenly false
+      :orientation "vertical"
+      :valign "center"
+      :vexpand true
+      (label
+        :class "gallery-hour"
+        :text current_hour
+        :xalign 0.7
+      )
+      (label
+        :class "gallery-minute"
+        :text current_minute
+        :xalign 0.8
+      )
+      (label
+        :class "gallery-am-or-pm"
+        :text am_or_pm
+        :xalign 0.9
+      )
+    )
   )
 )

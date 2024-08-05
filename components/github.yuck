@@ -1,0 +1,15 @@
+(defwidget github_root []
+  (box
+    :class "github-container"
+    :space-evenly false
+    :valign "center"
+    :orientation "vertical"
+    (label
+      :class "github-text"
+      :wrap true
+      :width 380 
+      :height 40
+      :text "Github: https://github.com/vbv-nyk"
+    )
+  )
+)

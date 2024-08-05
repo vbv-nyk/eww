@@ -9,3 +9,20 @@
   background-repeat: no-repeat;
   border: solid 3px variables.$motto-border-color;
 }
+
+
+.gallery-hour {
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 2px 2px rgba(variables.$player-text-color,0.2);
+}
+.gallery-minute {
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 2px 2px rgba(variables.$player-text-color,0.2);
+}
+.gallery-am-or-pm {
+  font-size: 30px;
+  font-weight: bolder;
+  text-shadow: 2px 2px rgba(variables.$player-text-color,0.2);
+}

@@ -6,6 +6,7 @@
 (include "components/privacy.yuck")
 (include "components/motto.yuck")
 (include "components/gallery.yuck")
+(include "components/github.yuck")
 
 (defwindow overview
   :monitor 1
@@ -21,7 +22,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "5%" :y "26%" :width "40%"
+    geometry :x "5%" :y "33%" :width "40%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -41,7 +42,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "74%" :y "26%"
+    geometry :x "74%" :y "21%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -97,4 +98,17 @@
   :exclusive false
   :wm-ignore false
   (gallery_root
+  ))
+
+(defwindow github
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+    geometry
+    :x "5%"
+    :y "21%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (github_root
   ))
