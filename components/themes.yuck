@@ -24,9 +24,9 @@
         :space-evenly false
         :orientation "vertical"
         (button
-          :onclick "eww open theme --arg currentDarkTheme=${(currentDarkTheme + 1)%arraylength(darkThemes)} --arg currentVibrantTheme=0 --arg currentLightTheme=0 && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
-          :onrightclick "eww open theme --arg currentDarkTheme=${currentDarkTheme > 0 ? currentDarkTheme - 1 :  arraylength(darkThemes) - 1 } --arg currentLightTheme=0 --arg currentVibrantTheme=0 && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
-          :onmiddleclick "eww open theme --arg currentDarkTheme=${0} --arg currentVibrantTheme=0 --arg currentLightTheme=0 && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
+          :onclick "eww open theme_monitor_1 --arg currentDarkTheme=${(currentDarkTheme + 1)%arraylength(darkThemes)} --arg currentVibrantTheme=0 --arg currentLightTheme=0 &&eww open theme_monitor_0 --arg currentDarkTheme=${(currentDarkTheme + 1)%arraylength(darkThemes)} --arg currentVibrantTheme=0 --arg currentLightTheme=0  && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
+          :onrightclick "eww open theme_monitor_1 --arg currentDarkTheme=${currentDarkTheme > 0 ? currentDarkTheme - 1 :  arraylength(darkThemes) - 1 } --arg currentLightTheme=0 --arg currentVibrantTheme=0 && eww open theme_monitor_0 --arg currentDarkTheme=${currentDarkTheme > 0 ? currentDarkTheme - 1 :  arraylength(darkThemes) - 1 } --arg currentLightTheme=0 --arg currentVibrantTheme=0  && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
+          :onmiddleclick "eww open theme_monitor_1 --arg currentDarkTheme=${0} --arg currentVibrantTheme=0 --arg currentLightTheme=0 && eww open theme_monitor_0 --arg currentDarkTheme=${0} --arg currentVibrantTheme=0 --arg currentLightTheme=0  && cp ${darkThemesPath}/${darkThemes[currentDarkTheme]}.scss themes/variables.scss && eww reload"
           :class "themes-emotion "
           "🗿"
         )
@@ -39,9 +39,9 @@
         :space-evenly false
         :orientation "vertical"
         (button
-          :onclick "eww open theme --arg currentLightTheme=${(currentLightTheme + 1)%arraylength(lightThemes)} --arg currentVibrantTheme=0 --arg currentDarkTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
-          :onrightclick "eww open theme --arg currentLightTheme=${currentLightTheme > 0 ? currentLightTheme - 1 :  arraylength(lightThemes) - 1 } --arg currentDarkTheme=0 --arg currentVibrantTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss && eww reload"
-          :onmiddleclick "eww open theme --arg currentLightTheme=${0} --arg currentVibrantTheme=0 --arg currentDarkTheme=0 && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
+          :onclick "eww open theme_monitor_1 --arg currentLightTheme=${(currentLightTheme + 1)%arraylength(lightThemes)} --arg currentVibrantTheme=0 --arg currentDarkTheme=0 && eww open theme_monitor_0 --arg currentLightTheme=${(currentLightTheme + 1)%arraylength(lightThemes)} --arg currentVibrantTheme=0 --arg currentDarkTheme=0  && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
+          :onrightclick "eww open theme_monitor_1 --arg currentLightTheme=${currentLightTheme > 0 ? currentLightTheme - 1 :  arraylength(lightThemes) - 1 } --arg currentDarkTheme=0 --arg currentVibrantTheme=0 && eww open theme_monitor_0 --arg currentLightTheme=${currentLightTheme > 0 ? currentLightTheme - 1 :  arraylength(lightThemes) - 1 } --arg currentDarkTheme=0 --arg currentVibrantTheme=0  && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss && eww reload"
+          :onmiddleclick "eww open theme_monitor_1 --arg currentLightTheme=${0} --arg currentVibrantTheme=0 --arg currentDarkTheme=0 && eww open theme_monitor_0 --arg currentLightTheme=${0} --arg currentVibrantTheme=0 --arg currentDarkTheme=0  && cp ${lightThemesPath}/${lightThemes[currentLightTheme]}.scss themes/variables.scss"
           :class "themes-emotion"
           "🍀"
         )
@@ -54,10 +54,10 @@
         :space-evenly false
         :orientation "vertical"
         (button
-          :onclick "eww open theme --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0 && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
-          :onrightclick "eww open theme --arg currentVibrantTheme=${currentVibrantTheme > 0 ? currentVibrantTheme - 1 :  arraylength(vibrantThemes) - 1 } --arg currentDarkTheme=0 --arg currentLightTheme=0 && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
+          :onclick "eww open theme_monitor_1 --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0 && eww open theme_monitor_0 --arg currentVibrantTheme=${(currentVibrantTheme + 1)%arraylength(vibrantThemes)} --arg currentDarkTheme=0 --arg currentLightTheme=0  && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
+          :onrightclick "eww open theme_monitor_1 --arg currentVibrantTheme=${currentVibrantTheme > 0 ? currentVibrantTheme - 1 :  arraylength(vibrantThemes) - 1 } --arg currentDarkTheme=0 --arg currentLightTheme=0 && eww open theme_monitor_0 --arg currentVibrantTheme=${currentVibrantTheme > 0 ? currentVibrantTheme - 1 :  arraylength(vibrantThemes) - 1 } --arg currentDarkTheme=0 --arg currentLightTheme=0  && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
           :class "themes-emotion"
-          :onmiddleclick "eww open theme --arg currentVibrantTheme=${0} --arg currentDarkTheme=0 --arg currentLightTheme=0 && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
+          :onmiddleclick "eww open theme_monitor_1 --arg currentVibrantTheme=${0} --arg currentDarkTheme=0 --arg currentLightTheme=0 && eww open theme_monitor_0 --arg currentVibrantTheme=${0} --arg currentDarkTheme=0 --arg currentLightTheme=0  && cp ${vibrantThemesPath}/${vibrantThemes[currentVibrantTheme]}.scss themes/variables.scss && eww reload"
           "🎨"
         )
         (label
