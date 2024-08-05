@@ -7,7 +7,6 @@
   animation-duration: 1s, 1s;
   animation-delay: 0s, 1s, 2s;
   border: solid 3px variables.$profile-border-color;
-  transition: border-color 1s;
   .profile-image {
     border-radius: 50%;
     border: solid 5px variables.$profile-border-color;
