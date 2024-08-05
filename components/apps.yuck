@@ -1,0 +1,31 @@
+(defwidget apps_root []
+  (box
+    :class "apps-container"
+    :orientation "vertical"
+    :space-evenly true
+    (button
+      :height 40
+      :width 40
+      :class "app-icon apps-chrome"
+      :onclick `google-chrome-stable`
+    )
+    (button
+      :height 40
+      :width 40
+      :class "app-icon apps-ranger"
+      :onclick `alacritty --title 'ranger' --command 'ranger' &`
+    )
+    (button
+      :height 40
+      :width 40
+      :class "app-icon apps-code"
+      :onclick `code --ozone-platform=wayland`
+    )
+    (button
+      :height 40
+      :width 40
+      :class "app-icon apps-terminal"
+      :onclick `alacritty &`
+    )
+  )
+)

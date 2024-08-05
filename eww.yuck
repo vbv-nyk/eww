@@ -7,6 +7,7 @@
 (include "components/motto.yuck")
 (include "components/gallery.yuck")
 (include "components/github.yuck")
+(include "components/apps.yuck")
 
 (defwindow overview
   :monitor 1
@@ -32,7 +33,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "48%" :y "21%"
+    geometry :x "47%" :y "21%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -42,7 +43,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "74%" :y "21%"
+    geometry :x "72%" :y "21%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -56,7 +57,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "84%" :y "56%"
+    geometry :x "83%" :y "56%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -67,7 +68,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "48%" :y "91%"
+    geometry :x "47%" :y "91%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -78,7 +79,7 @@
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "70%" :y "91%"
+    geometry :x "69%" :y "91%"
   :anchor "top left")
   :exclusive false
   :wm-ignore false
@@ -90,7 +91,7 @@
   :stacking "bottom"
   :geometry (
     geometry
-    :x "48%"
+    :x "47%"
     :y "56%"
     :width 320
     :height 172
@@ -111,4 +112,19 @@
   :exclusive false
   :wm-ignore false
   (github_root
+  ))
+
+(defwindow apps
+  :monitor 1
+  :stacking "bottom"
+  :geometry (
+    geometry
+    :x "13%"
+    :y "21%"
+    :height 166
+    :width 30
+  :anchor "top right")
+  :exclusive false
+  :wm-ignore false
+  (apps_root
   ))

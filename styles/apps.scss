@@ -1,0 +1,37 @@
+@use "../themes/variables.scss";
+
+
+.apps-text {
+  letter-spacing: 1px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.app-icon {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(variables.$player-background-color, 0.5);
+  border: solid 1px variables.$privacy-border-color;
+  background-blend-mode:  overlay;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.apps-ranger {
+  background-image: url("./assets/apps/explorer.png");
+  background-size: 30px 30px;
+}
+.apps-chrome {
+  background-image: url("./assets/apps/browser.png");
+  background-size: 30px 30px;
+}
+.apps-terminal {
+  background-image: url("./assets/apps/terminal-copy.png");
+  background-size: 30px 30px;
+}
+
+.apps-code {
+  background-image: url("./assets/apps/code.png");
+  background-size: 30px 30px;
+}
