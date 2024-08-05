@@ -1,9 +1,0 @@
-(defwidget clock_root []
-  (box
-    :class "clock-container"
-    :space-evenly false
-    :width 320
-    :height 172
-    :valign "center"
-  )
-)

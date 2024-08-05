@@ -3,18 +3,14 @@
 .profile-container {
   background-color: variables.$profile-background-color;
   border-radius: 15px;
-  animation-name: hide-profile, show-profile;
-  animation-duration: 1s, 1s;
-  animation-delay: 0s, 1s, 2s;
   border: solid 3px variables.$profile-border-color;
   .profile-image {
-    border-radius: 50%;
-    border: solid 5px variables.$profile-border-color;
+    // border-radius: 50%;
     margin-right: 100px;
     margin-left: 100px;
     margin-top: 20px;
     background-image: url("./assets/luffy.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -40,23 +36,5 @@
     color: variables.$profile-contact-color;
     letter-spacing: 1px;
     font-weight: 400;
-  }
-}
-
-@keyframes hide-profile {
-  from {
-    margin-top: 600px;
-  }
-  to {
-    margin-top: 600px;
-  }
-}
-
-@keyframes show-profile {
-  from {
-    margin-top: 500px;
-  }
-  to {
-    margin-top: 0;
   }
 }

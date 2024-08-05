@@ -1,0 +1,8 @@
+(defwidget gallery_root []
+  (image
+    :class "gallery-container"
+    :width 320
+    :height 150
+    :valign "center"
+  )
+)

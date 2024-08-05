@@ -1,0 +1,11 @@
+@use '../themes/variables.scss';
+
+.gallery-container {
+  background-color: variables.$motto-background-color;
+  border-radius: 15px;
+  background-image: url("./assets/wallpaper.png");
+  background-position:  left,right;
+  background-size: contain,contain;
+  background-repeat: no-repeat;
+  border: solid 3px variables.$motto-border-color;
+}

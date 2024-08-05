@@ -5,7 +5,7 @@
 (include "components/player.yuck")
 (include "components/privacy.yuck")
 (include "components/motto.yuck")
-(include "components/clock.yuck")
+(include "components/gallery.yuck")
 
 (defwindow overview
   :monitor 1
@@ -84,13 +84,17 @@
   (motto_root
   ))
 
-(defwindow clock
+(defwindow gallery
   :monitor 1
   :stacking "bottom"
   :geometry (
-    geometry :x "48%" :y "56%"
+    geometry
+    :x "48%"
+    :y "56%"
+    :width 320
+    :height 172
   :anchor "top left")
   :exclusive false
   :wm-ignore false
-  (clock_root
+  (gallery_root
   ))
