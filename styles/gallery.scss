@@ -1,28 +1,28 @@
 @use '../themes/variables.scss';
 
 .gallery-container {
-  background-color: variables.$motto-background-color;
+  background-color: variables.$gallery-background-color;
   border-radius: 15px;
   background-image: url("./assets/wallpaper.png");
   background-position:  left,right;
   background-size: contain,contain;
   background-repeat: no-repeat;
-  border: solid 3px variables.$motto-border-color;
+  border: solid 3px variables.$gallery-border-color;
 }
 
 
 .gallery-hour {
   font-size: 30px;
   font-weight: bolder;
-  text-shadow: 2px 2px rgba(variables.$player-text-color,0.2);
+  text-shadow: 2px 2px rgba(variables.$gallery-text-color,0.2);
 }
 .gallery-minute {
   font-size: 30px;
   font-weight: bolder;
-  text-shadow: 2px 2px rgba(variables.$player-text-color,0.2);
+  text-shadow: 2px 2px rgba(variables.$gallery-text-color,0.2);
 }
 .gallery-am-or-pm {
   font-size: 30px;
   font-weight: bolder;
-  text-shadow: 2px 2px rgba(variables.$player-text-color,0.2);
+  text-shadow: 2px 2px rgba(variables.$gallery-text-color,0.2);
 }

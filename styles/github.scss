@@ -1,9 +1,9 @@
 @use "../themes/variables.scss";
 
 .github-container {
-  background-color: variables.$motto-background-color;
+  background-color: variables.$github-background-color;
   border-radius: 15px;
-  border: solid 3px variables.$motto-border-color;
+  border: solid 3px variables.$github-border-color;
 }
 
 .github-text {
