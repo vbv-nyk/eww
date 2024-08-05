@@ -8,30 +8,29 @@
 }
 
 .app-icon {
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(variables.$apps-background-color, 0.5);
-  border: solid 1px variables.$apps-border-color;
-  background-blend-mode:  overlay;
-  border-radius: 5px;
+  background-color: rgba(variables.$apps-background-color, 1);
+  background-blend-mode:  difference;
+  border-radius: 50%;
   margin-top: 5px;
 }
 
 .apps-ranger {
   background-image: url("./assets/apps/explorer.png");
-  background-size: 30px 30px;
+  background-size: 25px 25px;
 }
 .apps-chrome {
   background-image: url("./assets/apps/browser.png");
-  background-size: 30px 30px;
+  background-size: 25px 25px;
 }
 .apps-terminal {
-  background-image: url("./assets/apps/terminal-copy.png");
-  background-size: 30px 30px;
+  background-image: url("./assets/apps/terminal.png");
+  background-size: 25px 25px;
 }
 
 .apps-code {
   background-image: url("./assets/apps/code.png");
-  background-size: 30px 30px;
+  background-size: 25px 25px;
 }
