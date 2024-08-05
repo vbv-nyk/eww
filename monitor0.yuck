@@ -1,0 +1,119 @@
+(defwindow overview_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (geometry :x "10%"
+    :y "7%"
+  :anchor "top center")
+  :exclusive false
+  :wm-ignore false
+  (overview_root))
+
+(defwindow profile_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry :x "5%" :y "33%" :width "40%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (profile_root))
+
+(defwindow weather_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry :x "47%" :y "22%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (weather_root))
+
+(defwindow theme_monitor_0 [currentLightTheme currentDarkTheme currentVibrantTheme]
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry :x "72%" :y "22%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (theme_root
+    :currentLightTheme currentLightTheme
+    :currentDarkTheme currentDarkTheme
+    :currentVibrantTheme currentVibrantTheme
+  ))
+
+(defwindow player_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry :x "83%" :y "53%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (player_root
+  ))
+
+(defwindow privacy_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry :x "47%" :y "85%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (privacy_root
+  ))
+
+(defwindow motto_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry :x "69%" :y "85%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (motto_root
+  ))
+
+(defwindow gallery_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry
+    :x "47%"
+    :y "53%"
+    :width 320
+    :height 172
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (gallery_root
+  ))
+
+(defwindow github_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry
+    :x "5%"
+    :y "22%"
+  :anchor "top left")
+  :exclusive false
+  :wm-ignore false
+  (github_root
+  ))
+
+(defwindow apps_monitor_0
+  :monitor 0
+  :stacking "bottom"
+  :geometry (
+    geometry
+    :x "5%"
+    :y "22%"
+    :height 166
+    :width 30
+  :anchor "top right")
+  :exclusive false
+  :wm-ignore false
+  (apps_root
+  ))
