@@ -26,7 +26,17 @@ Hi guys, feel free to use the widgets—every widget has been separated into its
 #### Weather Widget
 
 - The weather widget uses the OpenWeatherMap API. You'll need to run the script located in the `scripts` folder to fetch the data. Ensure you include your API key when running the script.
-- You can also create your own themes and add them to the `themes` folder. Just specify the variable names and include them in the themes component.
+
+#### Custom Theme
+- You can also create your own themes and add them to the `themes` folder. Just specify the variable names and include them in the themes component. Check the existing ones to understand it better. 
+
+```
+(defvar darkThemes `["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7", "theme-8", "theme-9", "theme-10"]`) 
+(defvar lightThemes `["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7", "theme-8", "theme-9", "theme-10"]`)
+(defvar vibrantThemes `["theme-1", "theme-2", "theme-3", "theme-4", "theme-5", "theme-6", "theme-7", "theme-8", "theme-9", "theme-10"]`)
+```
+
+Just mention the name of your excluding .scss
 
 #### Media Player
 
