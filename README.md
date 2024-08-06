@@ -19,7 +19,7 @@ eww open-many overview_monitor_0 weather_monitor_0 profile_monitor_0 player_moni
 ```
 
 
-### Troubleshooting
+### Usage
 
 Hi guys, feel free to use the widgets—every widget has been separated into its own window, so you can use the ones you like. There are around 25 themes: 10 dark, 10 light (lucky), and 5 Goofy (vibrant).
 
