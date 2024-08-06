@@ -6,6 +6,16 @@ Welcome to my Eww Widgets project! This project contains a collection of customi
 
 Before you can run the widgets, you'll need to install [Eww](https://elkowar.github.io/eww/). Eww is a powerful and flexible widget system for Linux, which allows you to create and display custom widgets.
 
+### Dependencies
+
+Make sure you have the following dependencies installed for all widgets to function correctly:
+
+- **OpenWeatherMap API** (You'll need an api key)
+- **Playerctl**
+- **PipeWire**
+- **Bluetoothctl**
+- **iwd**
+
 ### Installation
 
 To install Eww, follow the instructions in the official [Eww documentation](https://elkowar.github.io/eww/). You can typically install it via package managers for your distribution, or you can build it from source.
