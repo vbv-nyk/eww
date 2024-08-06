@@ -3,8 +3,14 @@
 Welcome to my Eww Widgets project! This project contains a collection of customizable widgets that display various system resources and information on your desktop.
 
 ## Screenshots
+
+Light Theme
 ![image](https://github.com/user-attachments/assets/90245617-f308-43a8-b516-0bf4e8ae9ea4)
+
+Dark Theme
 ![image](https://github.com/user-attachments/assets/c053f79d-9ae3-48d3-bca3-3978b4c4f821)
+
+Vibrant Theme
 ![image](https://github.com/user-attachments/assets/e42f2f4b-dfba-437e-863a-8071750193d6)
 
 Choosing a feeling will change your theme, instructions have been provided so you can add your own themes.
