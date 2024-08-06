@@ -1,6 +1,6 @@
-(defpoll current_hour :interval "5s" `date | awk '/Mon/ {print $4}' | awk -F : '{print $1}'`)
-(defpoll current_minute :interval "5s" `date | awk '/Mon/ {print $4}' | awk -F : '{print $2}'`)
-(deflisten am_or_pm `date | awk '/Mon/ {print $5}'`)
+(defpoll current_hour :interval "5s" `date | awk '// {print $4}' | awk -F : '{print $1}'`)
+(defpoll current_minute :interval "5s" `date | awk '// {print $4}' | awk -F : '{print $2}'`)
+(deflisten am_or_pm `date | awk '// {print $5}'`)
 
 (defwidget gallery_root []
   (box
