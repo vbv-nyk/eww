@@ -55,5 +55,6 @@ Just mention the name of your excluding .scss
 #### Performance Notes
 
 - The theme-changing process can be a bit CPU-intensive.
+- This project currently works under the assumption that you have 2 monitors, if you have only 1 monitor then the theme changes might the widgets for both monitor 0 and 1.
 
 If you run into any other issues or have questions, feel free to open an issue or reach out for help!
